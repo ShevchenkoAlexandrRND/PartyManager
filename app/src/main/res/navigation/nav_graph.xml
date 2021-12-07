@@ -3,21 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/mainActivity5">
-    <activity
-        android:id="@+id/mainActivity5"
-        android:name="com.example.partymanagerroom_v10.MainActivity"
-        android:label="MainActivity" />
-    <action
-    android:id="@+id/mainActivity5_to_action_addParty3"
-    app:destination="@id/addParty3" />
+    app:startDestination="@id/partyList">
     <fragment
-        android:id="@+id/addParty3"
+        android:id="@+id/partyList"
+        android:name="com.example.partymanagerroom_v10.screens.PartyList"
+        android:label="fragment_party_list"
+        tools:layout="@layout/fragment_party_list" >
+        <action
+            android:id="@+id/action_partyList_to_addParty2"
+            app:destination="@id/addParty2" />
+    </fragment>
+    <fragment
+        android:id="@+id/addParty2"
         android:name="com.example.partymanagerroom_v10.screens.AddParty"
         android:label="fragment_add_party"
         tools:layout="@layout/fragment_add_party" >
         <action
-            android:id="@+id/action_addParty3_to_mainActivity5"
-            app:destination="@id/mainActivity5" />
+            android:id="@+id/action_addParty2_to_partyList"
+            app:destination="@id/partyList" />
     </fragment>
 </navigation>
